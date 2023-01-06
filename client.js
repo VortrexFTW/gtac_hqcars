@@ -11,13 +11,13 @@ addEventHandler("OnResourceStart", (event,resource) => {
 		120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,137,138,139,141,142,143,144,145,146,147,148,149,150];
 	
 	for(var i in files) {
-		let txd = openFile(i+".txd", false);
+		let txd = openFile(`files/{i}.txd`, false);
 		if(txd != null) {
 			game.loadTXD(files[i].toUppercase, txd);
 			txd.close();
 		}	
 		if(Number(modelIDs[i]) != -1) {
-			let dff = openFile(i+".dff", false);
+			let dff = openFile(`files/{i}.dff`, false);
 			if(dff != null) {
 				game.loadDFF(Number(modelIDs[i]), dff);
 				dff.close();
