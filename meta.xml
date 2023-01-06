@@ -1,7 +1,7 @@
 <meta>
 	<info author="Vortrex" description="High quality cars for GTA 3" />
 
-	<script src="client.lua" type="client" language="lua" />
+	<script src="client.js" type="client" language="javascript" />
 	
 	<file src="files/ambulan.dff" type="client" />
 	<file src="files/ambulan.txd" type="client" />
