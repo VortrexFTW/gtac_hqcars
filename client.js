@@ -13,14 +13,14 @@ addEventHandler("OnResourceStart", (event,resource) => {
 	for(var i in files) {
 		let txd = openFile(i+".txd", false);
 		if(txd != null) {
-			game.loadTXDFile(files[i].toUppercase, txd);
-			txd.close()
+			game.loadTXD(files[i].toUppercase, txd);
+			txd.close();
 		}	
 		if(Number(modelIDs[i]) != -1) {
 			let dff = openFile(i+".dff", false);
 			if(dff != null) {
-				game.loadDFFFile(Number(modelIDs[i]), dff);
-				dff.close()
+				game.loadDFF(Number(modelIDs[i]), dff);
+				dff.close();
 			}
 		}
 	}	
