@@ -1,6 +1,6 @@
 // THIS IS FOR 1.0.56+ ONLY
 
-addEventHandler("OnResourceStart", (event,resource) => {
+bindEventHandler("OnResourceStart", thisResource, function (event, resource) {
 	let files = ["landstal", "idaho", "stinger", "linerun", "peren", "sentinel", "patriot", "firetruk", "trash", "stretch", 
 	"manana", "infernus", "blista", "pony", "mule", "cheetah", "ambulan", "fbicar", "moonbeam", "esperant", "taxi", "kuruma", 
 	"bobcat", "mrwhoop", "bfinject", "corpse", "police", "enforcer", "securicar", "banshee", "predator", "bus", "rhino", "barracks", 
@@ -11,13 +11,13 @@ addEventHandler("OnResourceStart", (event,resource) => {
 		120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,137,138,139,141,142,143,144,145,146,147,148,149,150];
 	
 	for(var i in files) {
-		let txd = openFile(`files/{i}.txd`, false);
+		let txd = openFile(`files/${files[i]}.txd`, false);
 		if(txd != null) {
-			game.loadTXD(files[i].toUppercase, txd);
+			game.loadTXD(files[i].toUpperCase(), txd);
 			txd.close();
 		}	
 		if(Number(modelIDs[i]) != -1) {
-			let dff = openFile(`files/{i}.dff`, false);
+			let dff = openFile(`files/${files[i]}.dff`, false);
 			if(dff != null) {
 				game.loadDFF(Number(modelIDs[i]), dff);
 				dff.close();
